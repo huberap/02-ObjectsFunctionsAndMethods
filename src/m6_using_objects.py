@@ -13,16 +13,19 @@ import rosegraphics as rg
 
 def main():
     two_circles()
+    circle_and_rectangle()
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
 
 def two_circles():
     window = rg.RoseWindow()
-    circle1 = rg.Circle(1, 5)
-    circle1.fill_color('red')
+    circle1 = rg.Circle(rg.Point(100,100),25)
+    circle1.fill_color = 'red'
+    circle2 = rg.Circle(rg.Point(100,200),60)
+    circle2.attach_to(window)
     circle1.attach_to(window)
-    #window.render()
+    window.render()
     window.close_on_mouse_click()
 
 
@@ -36,7 +39,7 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # DONE: 2. Implement this function, per its doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.txt  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -45,6 +48,24 @@ def two_circles():
 
 
 def circle_and_rectangle():
+    window = rg.RoseWindow()
+    circ = rg.Circle(rg.Point(50,50),10)
+    rect = rg.Rectangle(rg.Point(10,10),rg.Point(100,90))
+    circ.fill_color = 'blue'
+    print('thickness is' , circ.outline_thickness)
+    print('fill color is ' ,circ.fill_color)
+    print('center is' ,circ.center)
+    print('x coordinate is ', circ.center.x)
+    print('y coordinate is ' , circ.center.y)
+
+    print('thickness is', rect.outline_thickness)
+    print('fill color is ', rect.fill_color)
+    print('corner 1 is', rect.corner_1)
+    print('corner 2 is  ', rect.corner_2)
+    circ.attach_to(window)
+    rect.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
@@ -76,7 +97,7 @@ def circle_and_rectangle():
            150.0
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # DONE 3. Implement this function, per its doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
