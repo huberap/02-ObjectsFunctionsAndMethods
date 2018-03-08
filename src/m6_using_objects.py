@@ -118,6 +118,11 @@ def lines():
     print('midpoint is' ,line1.get_midpoint())
     print(line1.get_midpoint().x)
     print(line1.get_midpoint().y)
+    line1.attach_to(window)
+    line2.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
+
 
 
     """
