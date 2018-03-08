@@ -19,12 +19,12 @@ def main():
 
 def two_circles():
     window = rg.RoseWindow()
-    circle1=rg.Circle(1, 5)
+    circle1 = rg.Circle(1, 5)
     circle1.fill_color('red')
     circle1.attach_to(window)
-    window.render()
+    #window.render()
     window.close_on_mouse_click()
-    
+
 
     """
     -- Constructs an rg.RoseWindow.
